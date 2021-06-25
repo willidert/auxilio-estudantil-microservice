@@ -3,5 +3,5 @@
 ## Iniciando o projeto 
 
 ```
-docker-compose up && docker-composer rm -fvs
+docker-compose up && docker-compose rm -fvs
 ```
