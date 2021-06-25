@@ -1,3 +1,7 @@
 # aux_est_micro
 
-# docker-compose up && docker-composer rm -fvs
+## Iniciando o projeto 
+
+```
+docker-compose up && docker-composer rm -fvs
+```
