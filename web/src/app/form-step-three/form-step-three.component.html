@@ -1,0 +1,210 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Família</p>
+      </div>
+      <div class="step-2">
+        <span class="number active"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 3/5</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>
+          7. Quantos responsáveis financeiros tem na sua família? (o número de
+          pessoas que contribuem com a renda da sua casa) *
+        </p>
+        <input
+          id="family-income-1"
+          name="income"
+          type="radio"
+          value="0"
+          [(ngModel)]="formQuestions.questionSeven"
+        />
+        <label for="family-income-1">1 membro </label><br />
+
+        <input
+          id="family-income-2"
+          name="income"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionSeven"
+        />
+        <label for="family-income-2">2 membros </label><br />
+
+        <input
+          id="family-income-3"
+          name="income"
+          type="radio"
+          value="2"
+          [(ngModel)]="formQuestions.questionSeven"
+        />
+        <label for="family-income-3">3 membros </label><br />
+
+        <input
+          id="family-income-4"
+          name="income"
+          type="radio"
+          value="3"
+          [(ngModel)]="formQuestions.questionSeven"
+        />
+        <label for="family-income-4">4 ou mais membros </label><br />
+      </div>
+
+      <div>
+        <p>
+          8. Qual a condição de trabalho do(s) responsável(eis) financeiro(s) da
+          sua casa? (Marque todas as alternativas que correspondem a sua
+          família) *
+        </p>
+        <div class="group-1">
+          <input
+            id="working-condition-1"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionOne"
+            (change)="(!formQuestions.questionsEight.optionOne)"
+            [(ngModel)]="formQuestions.questionsEight.optionOne"
+          />
+          <label for="working-condition-1">Funcionário Público </label><br />
+
+          <input
+            id="working-condition-2"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionTwo"
+            (change)="(!formQuestions.questionsEight.optionTwo)"
+            [(ngModel)]="formQuestions.questionsEight.optionTwo"
+          />
+          <label for="working-condition-2">Empregado CLT </label><br />
+
+          <input
+            id="working-condition-3"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionThree"
+            (change)="(!formQuestions.questionsEight.optionThree)"
+            [(ngModel)]="formQuestions.questionsEight.optionThree"
+          />
+          <label for="working-condition-3">Desempregado </label><br />
+
+          <input
+            id="working-condition-4"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionFour"
+            (change)="(!formQuestions.questionsEight.optionFour)"
+            [(ngModel)]="formQuestions.questionsEight.optionFour"
+          />
+          <label for="working-condition-4"
+            >Trabalhador Informal (trabalho onde não há contribuição de tributos
+            e impostos, como :INSS, IS, IR) </label
+          ><br />
+
+          <input
+            id="working-condition-5"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionFive"
+            (change)="(!formQuestions.questionsEight.optionFive)"
+            [(ngModel)]="formQuestions.questionsEight.optionFive"
+          />
+          <label for="working-condition-5"
+            >Trabalhador Autônomo (Há contribuição - MEI p.ex.) </label
+          ><br />
+
+          <input
+            id="working-condition-6"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionSix"
+            (change)="(!formQuestions.questionsEight.optionSix)"
+            [(ngModel)]="formQuestions.questionsEight.optionSix"
+          />
+          <label for="working-condition-6">Pescador/agricultor familiar </label
+          ><br />
+
+          <input
+            id="working-condition-7"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionSeven"
+            (change)="(!formQuestions.questionsEight.optionSeven)"
+            [(ngModel)]="formQuestions.questionsEight.optionSeven"
+          />
+          <label for="working-condition-7">Aposentado </label><br />
+
+          <input
+            id="working-condition-8"
+            name="working-condition"
+            type="checkbox"
+            [checked]="formQuestions.questionsEight.optionEigth"
+            (change)="(!formQuestions.questionsEight.optionEigth)"
+            [(ngModel)]="formQuestions.questionsEight.optionEigth"
+          />
+          <label for="working-condition-8">Beneficiário INSS </label><br />
+        </div>
+      </div>
+      <div>
+        <p>
+          9. Qual a condição de renda dos responsáveis financeiros da sua casa?
+          *
+        </p>
+        <input
+          id="income-condition-1"
+          name="income-condition"
+          type="radio"
+          value="0"
+          [(ngModel)]="formQuestions.questionsNine"
+        />
+        <label for="income-condition-1">Sem renda </label><br />
+
+        <input
+          id="income-condition-2"
+          name="income-condition"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionsNine"
+        />
+        <label for="income-condition-2">Renda até um salário</label><br />
+
+        <input
+          id="income-condition-3"
+          name="income-condition"
+          type="radio"
+          value="2"
+          [(ngModel)]="formQuestions.questionsNine"
+        />
+        <label for="income-condition-3">Renda acima de um salário </label><br />
+      </div>
+      <div class="button">
+        <button type="button" routerLink="/form-step-two">Voltar</button>
+        <button (click)="log()" type="button" routerLink="/form-step-four">
+          Avancar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

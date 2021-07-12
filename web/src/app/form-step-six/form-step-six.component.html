@@ -1,0 +1,155 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Família</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5 </span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number active"> 6 </span>
+        <p>Saúde</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 6/6</span>
+      <h3>Saúde</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>14. Você possui alguma doença crônica?</p>
+        <input
+          id="disease-1"
+          name="disease"
+          type="radio"
+          value="0"
+          [(ngModel)]="formQuestions.questionsFourteen"
+        />
+        <label for="disease-1">Sim </label><br />
+
+        <input
+          id="disease-2"
+          name="disease"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionsFourteen"
+        />
+        <label for="disease-2">Não </label><br />
+      </div>
+
+      <div>
+        <p>15. Você faz uso de medicação continuada? *</p>
+        <div class="group-1">
+          <input
+            id="medication-1"
+            name="medication"
+            type="radio"
+            value="0"
+            [(ngModel)]="formQuestions.questionsFifteen"
+          />
+          <label for="medication-1">Sim </label><br />
+
+          <input
+            id="medication-2"
+            name="medication"
+            type="radio"
+            value="1"
+            [(ngModel)]="formQuestions.questionsFifteen"
+          />
+          <label for="medication-2">Não </label><br />
+        </div>
+      </div>
+
+      <div>
+        <p>16. Você possui algum tipo de deficiência? *</p>
+        <div class="group-1">
+          <input
+            id="deficiency-1"
+            name="deficiency"
+            type="radio"
+            value="0"
+            [(ngModel)]="formQuestions.questionsSixteen"
+          />
+          <label for="deficiency-1">Sim </label><br />
+
+          <input
+            id="deficiency-2"
+            name="deficiency"
+            type="radio"
+            value="1"
+            [(ngModel)]="formQuestions.questionsSixteen"
+          />
+          <label for="deficiency-2">Não </label><br />
+        </div>
+      </div>
+
+      <div>
+        <p>17. Alguém de sua família possui doença crônica? *</p>
+        <div class="group-1">
+          <input
+            id="disease-family-1"
+            name="disease-family"
+            type="radio"
+            value="0"
+            [(ngModel)]="formQuestions.questionsSeventeen"
+          />
+          <label for="disease-family-1">Sim </label><br />
+
+          <input
+            id="disease-family-2"
+            name="disease-family"
+            type="radio"
+            value="1"
+            [(ngModel)]="formQuestions.questionsSeventeen"
+          />
+          <label for="disease-family-2">Não </label><br />
+        </div>
+      </div>
+
+      <div>
+        <p>18. Alguém de sua família faz uso de medicação continuada? *</p>
+        <div class="group-1">
+          <input
+            id="medication-family-1"
+            name="medication-family"
+            type="radio"
+            value="0"
+            [(ngModel)]="formQuestions.questionsEighteen"
+          />
+          <label for="medication-family-1">Sim </label><br />
+
+          <input
+            id="medication-family-2"
+            name="medication-family"
+            type="radio"
+            value="1"
+            [(ngModel)]="formQuestions.questionsEighteen"
+          />
+          <label for="medication-family-2">Não </label><br />
+        </div>
+      </div>
+
+      <div class="button">
+        <button type="button" routerLink="/form-step-five">Voltar</button>
+        <button (click)="log()" (click)="submitForm()" type="button">
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

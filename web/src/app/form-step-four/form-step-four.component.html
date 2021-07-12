@@ -1,0 +1,115 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Família</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number active"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 4/5</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>10. Você mora no mesmo município do campus? *</p>
+        <input
+          id="to-live-1"
+          name="to-live"
+          type="radio"
+          value="0"
+          [(ngModel)]="formQuestions.questionsTen"
+        />
+        <label for="to-live-1">Sim, no mesmo município do campus </label><br />
+
+        <input
+          id="to-live-2"
+          name="to-live"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionsTen"
+        />
+        <label for="to-live-2"
+          >Não, moro fora do município do campus ou em uma zona rural </label
+        ><br />
+      </div>
+
+      <div>
+        <p>11. Qual é a condição da sua casa? *</p>
+        <div class="group-1">
+          <input
+            id="house-condition-1"
+            name="house-condition"
+            type="radio"
+            value="0"
+            [(ngModel)]="formQuestions.questionsEleven"
+          />
+          <label for="house-condition-1">Alugada </label><br />
+
+          <input
+            id="house-condition-2"
+            name="house-condition"
+            type="radio"
+            value="1"
+            [(ngModel)]="formQuestions.questionsEleven"
+          />
+          <label for="house-condition-2">Financiada </label><br />
+
+          <input
+            id="house-condition-3"
+            name="house-condition"
+            type="radio"
+            value="2"
+            [(ngModel)]="formQuestions.questionsEleven"
+          />
+          <label for="house-condition-3">Cedida </label><br />
+
+          <input
+            id="house-condition-4"
+            name="house-condition"
+            type="radio"
+            value="3"
+            [(ngModel)]="formQuestions.questionsEleven"
+          />
+          <label for="house-condition-4">Própria </label><br />
+
+          <input
+            id="house-condition-5"
+            name="house-condition"
+            type="radio"
+            value="4"
+            [(ngModel)]="formQuestions.questionsEleven"
+          />
+          <label for="house-condition-5">Outro </label><br />
+        </div>
+      </div>
+
+      <div class="button">
+        <button type="button" routerLink="/form-step-three">Voltar</button>
+        <button (click)="log()" type="button" routerLink="/form-step-five">
+          Avancar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
