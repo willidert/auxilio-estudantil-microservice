@@ -1,0 +1,109 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number active"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Família</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 1/5</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>1. Você é autodeclarado Preto, Pardo ou Indígena? *</p>
+        <input
+          id="color"
+          name="color-1"
+          type="radio"
+          value="sim"
+          [(ngModel)]="formQuestions.questionOne"
+        />
+        <label for="color">Sim</label><br />
+
+        <input
+          id="color-2"
+          name="color-2"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionOne"
+        />
+        <label for="color-2">Não</label><br />
+      </div>
+
+      <div>
+        <p>
+          2. Você ou sua família são beneficiários de programas sociais do
+          governo? (Bolsa Família, BPC e etc)? *
+        </p>
+        <div class="group-1">
+          <input
+            id="social-program-1"
+            name="social-program"
+            type="radio"
+            value="sim"
+            [(ngModel)]="formQuestions.questionTwo"
+          />
+          <label for="social-program-1">Sim</label><br />
+
+          <input
+            id="social-program-2"
+            name="social-program"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwo"
+          />
+          <label for="social-program-2">Não</label><br />
+        </div>
+      </div>
+      <div>
+        <p>3. Recebe auxílio estudantil do campus? *</p>
+        <input
+          id="student-aid-1"
+          name="student-aid"
+          type="radio"
+          value="sim"
+          [(ngModel)]="formQuestions.questionThree"
+        />
+        <label for="student-aid-1">Sim</label><br />
+        <input
+          id="student-aid-2"
+          name="student-aid"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionThree"
+        />
+        <label for="student-aid-2">Não</label><br />
+      </div>
+      <button
+        (click)="log()"
+        type="button"
+        value="Next"
+        routerLink="/form-step-two"
+      >
+        Avancar
+      </button>
+    </div>
+  </div>
+</div>

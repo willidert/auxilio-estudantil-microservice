@@ -1,0 +1,241 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number active"> 2 </span>
+        <p>Família</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 2/5</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>
+          4. Qual a renda per capita da sua família? (Some toda a renda da sua
+          família e divida pelo número de pessoas que moram com você)? *
+        </p>
+        <input
+          id="income-1"
+          name="income"
+          type="radio"
+          value="0"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-1">inferior a 272,22 </label><br />
+
+        <input
+          id="income-2"
+          name="income"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-2">R$ 272,23, a 544,46 </label><br />
+
+        <input
+          id="income-3"
+          name="income"
+          type="radio"
+          value="2"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-3">R$ 544,47 a 680,58 </label><br />
+
+        <input
+          id="income-4"
+          name="income"
+          type="radio"
+          value="3"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-4">R$ 680,59 a 816,70 </label><br />
+
+        <input
+          id="income-5"
+          name="income"
+          type="radio"
+          value="4"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-5">R$ 816,71 a 952,82 </label><br />
+
+        <input
+          id="income-6"
+          name="income"
+          type="radio"
+          value="5"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-6">R$ 952,83 a 1.088,94 </label><br />
+
+        <input
+          id="income-7"
+          name="income"
+          type="radio"
+          value="6"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-7">R$1.088,95 a 1.225,06 </label><br />
+
+        <input
+          id="income-8"
+          name="income"
+          type="radio"
+          value="7"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-8">R$ 1.225, 07 a 1.497,07 </label><br />
+
+        <input
+          id="income-9"
+          name="income"
+          type="radio"
+          value="8"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-9">R$ 1.497,08 a 1.650,00 </label><br />
+
+        <input
+          id="income-10"
+          name="income"
+          type="radio"
+          value="9"
+          [(ngModel)]="formQuestions.questionFour"
+        />
+        <label for="income-10">superior a 1.650,00 </label><br />
+      </div>
+
+      <div>
+        <p>5. Você exerce alguma atividade remunerada? *</p>
+        <div class="group-1">
+          <input
+            id="paid-activity-1"
+            name="paid-activity"
+            type="radio"
+            value="9"
+            [(ngModel)]="formQuestions.questionFive"
+          />
+          <label for="paid-activity-1">Sim</label><br />
+
+          <input
+            id="paid-activity-2"
+            name="paid-activity"
+            type="radio"
+            value="10"
+            [(ngModel)]="formQuestions.questionFive"
+          />
+          <label for="paid-activity-2">Não</label><br />
+        </div>
+      </div>
+      <div>
+        <p>6. Qual a sua situação financeira? *</p>
+        <input
+          id="financial-situation-1"
+          name="financial-situation"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-1"
+          >Dependente financeiramente dos pais </label
+        ><br />
+
+        <input
+          id="financial-situation-2"
+          name="financial-situation"
+          type="radio"
+          value="2"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-2"
+          >Dependente financeiramente de um dos pais </label
+        ><br />
+
+        <input
+          id="financial-situation-3"
+          name="financial-situation"
+          type="radio"
+          value="3"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-3"
+          >Dependente financeiramente do cônjuge ou companheiro(a) </label
+        ><br />
+
+        <input
+          id="financial-situation-4"
+          name="financial-situation"
+          type="radio"
+          value="4"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-4"
+          >Dependente financeiramente de outros parentes ou amigos </label
+        ><br />
+
+        <input
+          id="financial-situation-5"
+          name="financial-situation"
+          type="radio"
+          value="5"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-5"
+          >Independente financeiramente e custeia apenas suas despesas pessoais </label
+        ><br />
+
+        <input
+          id="financial-situation-6"
+          name="financial-situation"
+          type="radio"
+          value="6"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-6"
+          >Independente financeiramente e responsável por parte das despesas
+          domésticas </label
+        ><br />
+
+        <input
+          id="financial-situation-7"
+          name="financial-situation"
+          type="radio"
+          value="7"
+          [(ngModel)]="formQuestions.questionSix"
+        />
+        <label for="financial-situation-7"
+          >Independente financeiramente e responsável por todas as despesas
+          domésticas </label
+        ><br />
+      </div>
+      <div class="button">
+        <button type="button" routerLink="/">Voltar</button>
+        <button (click)="log()" type="button" routerLink="/form-step-three">
+          Avancar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

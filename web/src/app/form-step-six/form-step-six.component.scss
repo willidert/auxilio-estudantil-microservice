@@ -1,0 +1,115 @@
+.wrapper {
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.personal-detail {
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+}
+
+.summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10px;
+
+  div:first-of-type {
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .number {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #f9f9fb;
+    margin-right: 10px;
+  }
+
+  .step-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .step-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  .active {
+    background: #0c75ff;
+  }
+}
+
+.title {
+  span {
+    font-size: 20px;
+    color: #32325f;
+    padding: 20px;
+  }
+
+  h3 {
+    font-size: 32px;
+    padding: 20px;
+  }
+}
+
+.form-wrapper {
+  padding: 5px 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  div {
+    margin: 5px;
+
+    p {
+      margin: 5px;
+      font-size: 22px;
+    }
+
+    input {
+      border-radius: 5px;
+      border: 1px solid #333;
+      margin: 10px 5px;
+      font-size: 20px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      font-size: 20px;
+      padding: 0.5em;
+    }
+  }
+
+  .button {
+    display: flex;
+
+    button {
+      grid-column: 1;
+      padding: 16px;
+      font-size: 24px;
+      align-self: center;
+      background: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      margin-right: 20px;
+    }
+
+    button:active {
+      transform: scale(0.9);
+    }
+  }
+}
