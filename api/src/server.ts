@@ -14,12 +14,12 @@ export class SetupServer {
 
   private setupExpress() {
     this.app.use(express.json());
-    this.app.use(router);
     this.app.use(
       cors({
         origin: '*',
       })
     );
+    this.app.use(router);
   }
 
   public getApp(): Application {
