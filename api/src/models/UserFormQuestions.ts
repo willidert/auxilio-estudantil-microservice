@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
   }
 );
 
-export const User: Model<UserFormQuestionsModel> = mongoose.model(
-  'UserFormQuestion',
+export const UserFormQuestions: Model<UserFormQuestionsModel> = mongoose.model(
+  'UserFormQuestions',
   schema
 );
