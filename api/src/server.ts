@@ -2,14 +2,15 @@ import express from 'express';
 import { Application } from 'express';
 import { router } from './routes/routes';
 import cors from 'cors';
-
+import * as database from './database';
 export class SetupServer {
   private app: Application = express();
 
   constructor(private port = 3333) {}
 
-  public init() {
+  public async init() {
     this.setupExpress();
+    await this.databaseSetup();
   }
 
   private setupExpress() {
@@ -30,5 +31,13 @@ export class SetupServer {
     this.app.listen(this.port, () => {
       console.log(`Server listening of port: ${this.port}`);
     });
+  }
+
+  private async databaseSetup(): Promise<void> {
+    await database.connect();
+  }
+
+  public async close(): Promise<void> {
+    await database.close();
   }
 }
