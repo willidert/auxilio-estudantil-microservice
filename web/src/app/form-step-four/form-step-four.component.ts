@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormQuestions } from '../models/form-questions';
+import { UserFormQuestions } from '../models/user-form-questions';
 import { FormDataService } from '../services/form-data.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormDataService } from '../services/form-data.service';
   styleUrls: ['./form-step-four.component.scss'],
 })
 export class FormStepFourComponent implements OnInit {
-  formQuestions: FormQuestions;
+  formQuestions: UserFormQuestions;
 
   constructor(public formDataService: FormDataService) {
     this.formQuestions = formDataService.formQuestions;
@@ -16,7 +16,7 @@ export class FormStepFourComponent implements OnInit {
   ngOnInit(): void {}
 
   log() {
-    console.log('10 -', this.formQuestions.questionsTen);
-    console.log('11 -', this.formQuestions.questionsEleven);
+    console.log('10 -', this.formQuestions.questionTen);
+    console.log('11 -', this.formQuestions.questionEleven);
   }
 }
