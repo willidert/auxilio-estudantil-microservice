@@ -40,7 +40,7 @@
           id="family-income-1"
           name="income"
           type="radio"
-          value="0"
+          value="1 membro"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-1">1 membro </label><br />
@@ -49,7 +49,7 @@
           id="family-income-2"
           name="income"
           type="radio"
-          value="1"
+          value="2 membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-2">2 membros </label><br />
@@ -58,7 +58,7 @@
           id="family-income-3"
           name="income"
           type="radio"
-          value="2"
+          value="3 membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-3">3 membros </label><br />
@@ -67,7 +67,7 @@
           id="family-income-4"
           name="income"
           type="radio"
-          value="3"
+          value="4 ou mais membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-4">4 ou mais membros </label><br />
@@ -85,7 +85,9 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionOne"
-            (change)="(!formQuestions.questionEight.optionOne)"
+            (change)="
+              formQuestions.questionEight.optionOne = 'Funcionário Público'
+            "
             [(ngModel)]="formQuestions.questionEight.optionOne"
           />
           <label for="working-condition-1">Funcionário Público </label><br />
@@ -95,7 +97,7 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionTwo"
-            (change)="(!formQuestions.questionEight.optionTwo)"
+            (change)="formQuestions.questionEight.optionTwo = 'Empregado CLT'"
             [(ngModel)]="formQuestions.questionEight.optionTwo"
           />
           <label for="working-condition-2">Empregado CLT </label><br />
@@ -105,7 +107,9 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionThree"
-            (change)="(!formQuestions.questionEight.optionThree)"
+            (change)="
+              !(formQuestions.questionEight.optionThree = 'Desempregado')
+            "
             [(ngModel)]="formQuestions.questionEight.optionThree"
           />
           <label for="working-condition-3">Desempregado </label><br />
@@ -115,7 +119,11 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionFour"
-            (change)="(!formQuestions.questionEight.optionFour)"
+            (change)="
+              !(formQuestions.questionEight.optionFour =
+                'Trabalhador Informal (trabalho onde não há contribuição de tributos
+            e impostos, como :INSS, IS, IR)')
+            "
             [(ngModel)]="formQuestions.questionEight.optionFour"
           />
           <label for="working-condition-4"
@@ -128,7 +136,10 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionFive"
-            (change)="(!formQuestions.questionEight.optionFive)"
+            (change)="
+              !(formQuestions.questionEight.optionFive =
+                'Trabalhador Autônomo (Há contribuição - MEI p.ex.)')
+            "
             [(ngModel)]="formQuestions.questionEight.optionFive"
           />
           <label for="working-condition-5"
@@ -140,7 +151,10 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionSix"
-            (change)="(!formQuestions.questionEight.optionSix)"
+            (change)="
+              !(formQuestions.questionEight.optionSix =
+                'Pescador/agricultor familiar')
+            "
             [(ngModel)]="formQuestions.questionEight.optionSix"
           />
           <label for="working-condition-6">Pescador/agricultor familiar </label
@@ -151,7 +165,7 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionSeven"
-            (change)="(!formQuestions.questionEight.optionSeven)"
+            (change)="!(formQuestions.questionEight.optionSeven = 'Aposentado')"
             [(ngModel)]="formQuestions.questionEight.optionSeven"
           />
           <label for="working-condition-7">Aposentado </label><br />
@@ -161,7 +175,9 @@
             name="working-condition"
             type="checkbox"
             [checked]="formQuestions.questionEight.optionEigth"
-            (change)="(!formQuestions.questionEight.optionEigth)"
+            (change)="
+              !(formQuestions.questionEight.optionEigth = 'Beneficiário INSS')
+            "
             [(ngModel)]="formQuestions.questionEight.optionEigth"
           />
           <label for="working-condition-8">Beneficiário INSS </label><br />
@@ -176,7 +192,7 @@
           id="income-condition-1"
           name="income-condition"
           type="radio"
-          value="0"
+          value="sem renda"
           [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-1">Sem renda </label><br />
@@ -185,7 +201,7 @@
           id="income-condition-2"
           name="income-condition"
           type="radio"
-          value="1"
+          value="renda até um salário"
           [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-2">Renda até um salário</label><br />
@@ -194,7 +210,7 @@
           id="income-condition-3"
           name="income-condition"
           type="radio"
-          value="2"
+          value="renda acima de um salário"
           [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-3">Renda acima de um salário </label><br />

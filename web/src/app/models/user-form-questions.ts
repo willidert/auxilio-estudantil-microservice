@@ -8,14 +8,14 @@ export class UserFormQuestions {
   questionSix!: string;
   questionSeven!: string;
   questionEight = {
-    optionOne: false,
-    optionTwo: false,
-    optionThree: false,
-    optionFour: false,
-    optionFive: false,
-    optionSix: false,
-    optionSeven: false,
-    optionEigth: false,
+    optionOne: '',
+    optionTwo: '',
+    optionThree: '',
+    optionFour: '',
+    optionFive: '',
+    optionSix: '',
+    optionSeven: '',
+    optionEigth: '',
   };
   questionNine!: string;
   questionTen!: string;
