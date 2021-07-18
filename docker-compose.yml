@@ -2,6 +2,8 @@ version: "3"
 services:
   api-gateway:
     image: nginx:alpine
+    logging:
+      driver: none
     container_name: api-gateway
     ports:
       - 80:80
@@ -34,11 +36,15 @@ services:
       - app-network
     depends_on:
       - mongodb
+      - rabbitmq
 
   mongodb:
     image: mongo
     restart: always
+    logging:
+      driver: none
     container_name: mongodb
+    hostname: mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=example
@@ -46,6 +52,20 @@ services:
       - 27017:27017
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    networks:
+      - app-network
+
+  rabbitmq:
+    image: "rabbitmq:3.8-management-alpine"
+    logging:
+      driver: none
+    container_name: rabbitmq
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
     networks:
       - app-network
 
