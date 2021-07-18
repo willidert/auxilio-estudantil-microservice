@@ -1,6 +1,6 @@
 describe("fill the form automatically", () => {
   it("should fill the form", () => {
-    cy.visit("http://localhost:4200");
+    cy.visit("http://localhost:80");
     cy.get("#email-user").type("mateus.bentes@gmail.com", { delay: 80 });
     cy.get("input[name='color-2']").click();
     cy.wait(500);
