@@ -37,7 +37,6 @@ services:
     container_name: model
     volumes:
       - ./model/:/app
-      - /app/node_modules
     ports:
       - 5000:5000
     networks:
