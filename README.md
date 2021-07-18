@@ -51,7 +51,7 @@ git clone https://github.com/willidert/auxilio-estudantil-microservice
 ```
 Entre no projeto clonado: 
 ```
-cd microservices-test/
+cd auxilio-estudantil-microservice/
 ```
 Na raiz do projeto  digite: 
 ```
