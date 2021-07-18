@@ -49,7 +49,7 @@ services:
   rabbitmq:
     image: "rabbitmq:3.8-management-alpine"
     logging:
-    driver: none
+      driver: none
     container_name: rabbitmq
     hostname: rabbitmq
     ports:
