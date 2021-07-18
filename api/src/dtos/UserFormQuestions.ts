@@ -20,4 +20,7 @@ export interface UserFormQuestions {
   questionSeventeen: string;
   questionEighteen: string;
   questionNineteen: string;
+  questionTwenty: string;
+  questionTwentyOne: string;
+  questionTwentyTwo: string;
 }

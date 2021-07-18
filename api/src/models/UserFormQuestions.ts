@@ -22,6 +22,9 @@ const schema = new mongoose.Schema(
     questionSeventeen: { type: String },
     questionEighteen: { type: String },
     questionNineteen: { type: String },
+    questionTwenty: { type: String },
+    questionTwentyOne: { type: String },
+    questionTwentyTwo: { type: String },
     email: {
       type: String,
       required: true,
