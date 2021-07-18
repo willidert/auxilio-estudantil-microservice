@@ -23,10 +23,4 @@ export class FormStepSixComponent implements OnInit {
     console.log('17. -', this.formQuestions.questionSeventeen);
     console.log('18. -', this.formQuestions.questionEighteen);
   }
-
-  submitForm() {
-    console.log('Form been submitted');
-
-    this.formDataService.sendFormQuestions();
-  }
 }
