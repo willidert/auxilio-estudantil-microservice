@@ -1,5 +1,8 @@
+import config from 'config';
 import { SetupServer } from './server';
 
-const server = new SetupServer();
-server.init(); // initialize async services
-server.start();
+(async () => {
+  const server = new SetupServer(config.get('App.port'));
+  await server.init();
+  server.start();
+})();

@@ -14,5 +14,7 @@ COPY . /app
 
 EXPOSE 3333
 
+RUN chmod +x wait-for-it.sh
+
 # Build and run the app
 CMD ["npm", "start"]

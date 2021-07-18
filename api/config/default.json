@@ -1,0 +1,8 @@
+{
+  "App": {
+    "database": {
+      "mongoUrl": "mongodb://root:example@mongodb:27017/form-questions"
+    },
+    "port": 3333
+  }
+}
