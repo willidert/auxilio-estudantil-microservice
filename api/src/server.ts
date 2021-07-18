@@ -3,6 +3,8 @@ import { Application } from 'express';
 import { router } from './routes/routes';
 import cors from 'cors';
 import * as database from './database';
+import rabbitmq from './RabbitMQ/rabbitmq-server';
+
 export class SetupServer {
   private app: Application = express();
 
@@ -11,6 +13,7 @@ export class SetupServer {
   public async init() {
     this.setupExpress();
     await this.databaseSetup();
+    await rabbitmq.start();
   }
 
   private setupExpress() {

@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { UserFormQuestions } from '../models/UserFormQuestions';
+import server from '../RabbitMQ/rabbitmq-server';
 import { formatKey } from '../utils/format-key';
 
 export class UserFormController {
@@ -17,6 +18,8 @@ export class UserFormController {
     } catch (error) {
       console.error(error);
     }
+
+    await server.publishInQueue('form', JSON.stringify(req.body));
 
     res.json({
       message: 'Hello World',
