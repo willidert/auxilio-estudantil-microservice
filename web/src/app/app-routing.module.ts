@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormStepFiveComponent } from './form-step-five/form-step-five.component';
 import { FormStepFourComponent } from './form-step-four/form-step-four.component';
 import { FormStepOneComponent } from './form-step-one/form-step-one.component';
+import { FormStepSevenComponent } from './form-step-seven/form-step-seven.component';
 import { FormStepSixComponent } from './form-step-six/form-step-six.component';
 import { FormStepThreeComponent } from './form-step-three/form-step-three.component';
 import { FormStepTwoComponent } from './form-step-two/form-step-two.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'form-step-four', component: FormStepFourComponent },
   { path: 'form-step-five', component: FormStepFiveComponent },
   { path: 'form-step-six', component: FormStepSixComponent },
+  { path: 'form-step-seven', component: FormStepSevenComponent },
 ];
 
 @NgModule({

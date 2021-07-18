@@ -1,0 +1,197 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number active"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Renda Familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 7 </span>
+        <p>Familía</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 1/5</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>19. Quantos dependentes você possui ? *</p>
+        <input
+          id="dependent-1"
+          name="dependent"
+          type="radio"
+          value="sim"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-1">Sim</label><br />
+
+        <input
+          id="dependent-2"
+          name="dependent"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-2">Não</label><br />
+        <input
+          id="dependent-3"
+          name="dependent"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-3">Não</label><br />
+        <input
+          id="dependent-4"
+          name="dependent"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-4">Não</label><br />
+        <input
+          id="dependent-5"
+          name="dependent"
+          type="radio"
+          value="nao"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-5">Não</label><br />
+      </div>
+
+      <div>
+        <p>20. Qual é o grau de escolaridade do seu pai ou responsável? *</p>
+        <div class="group-1">
+          <input
+            id="schooling-1"
+            name="schooling"
+            type="radio"
+            value="sim"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-1">Sem escolaridade</label><br />
+
+          <input
+            id="schooling-2"
+            name="schooling"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-2">Ensino fundamental</label><br />
+          <input
+            id="schooling-3"
+            name="schooling"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-3">Ensino médio</label><br />
+          <input
+            id="schooling-4"
+            name="schooling"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-5">Ensino superior</label><br />
+          <input
+            id="schooling-5"
+            name="schooling"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-5">Desconheço</label><br />
+          <input
+            id="schooling-6"
+            name="schooling"
+            type="radio"
+            value="nao"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-6">Não se aplica</label><br />
+        </div>
+      </div>
+      <div>
+        <p>21. Qual é o grau de escolaridade da sua mãe ou responsável? ? *</p>
+        <input
+          id="mother-schooling-1"
+          name="mother-schooling"
+          type="radio"
+          value="Graduação"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-1">Sem escolaridade</label><br />
+        <input
+          id="mother-schooling-2"
+          name="student-aid"
+          type="radio"
+          value="Médio Integrado EJA"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-2">Ensino fundamental</label><br />
+        <input
+          id="mother-schooling-3"
+          name="mother-schooling"
+          type="radio"
+          value="Médio Técnico Integrado"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-3">Ensino médio</label><br />
+        <input
+          id="mother-schooling-4"
+          name="mother-schooling"
+          type="radio"
+          value="Técnico Subsequente"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-4">Ensino superior</label><br />
+        <input
+          id="mother-schooling-5"
+          name="mother-schooling"
+          type="radio"
+          value="Técnico Subsequente"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-5">Desconheço</label><br />
+        <input
+          id="mother-schooling-6"
+          name="mother-schooling"
+          type="radio"
+          value="Técnico Subsequente"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-6">Não se aplica</label><br />
+      </div>
+
+      <div class="button">
+        <button type="button" routerLink="/form-step-five">Voltar</button>
+        <button (click)="log()" (click)="submitForm()" type="button">
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

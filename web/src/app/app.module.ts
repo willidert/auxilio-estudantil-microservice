@@ -12,6 +12,7 @@ import { FormStepFourComponent } from './form-step-four/form-step-four.component
 import { FormStepFiveComponent } from './form-step-five/form-step-five.component';
 import { FormStepSixComponent } from './form-step-six/form-step-six.component';
 import { UserEmailComponent } from './user-email/user-email.component';
+import { FormStepSevenComponent } from './form-step-seven/form-step-seven.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UserEmailComponent } from './user-email/user-email.component';
     FormStepFiveComponent,
     FormStepSixComponent,
     UserEmailComponent,
+    FormStepSevenComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
