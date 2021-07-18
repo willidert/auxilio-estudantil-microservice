@@ -7,7 +7,7 @@
       </div>
       <div class="step-2">
         <span class="number"> 2 </span>
-        <p>Família</p>
+        <p>Renda Familiar</p>
       </div>
       <div class="step-2">
         <span class="number active"> 3 </span>
@@ -25,9 +25,13 @@
         <span class="number"> 6 </span>
         <p>Saúde</p>
       </div>
+      <div class="step-2">
+        <span class="number"> 7 </span>
+        <p>Familía</p>
+      </div>
     </div>
     <div class="title">
-      <span>Step 3/5</span>
+      <span>Step 3/7</span>
       <h3>Informações iniciais</h3>
     </div>
     <div class="form-wrapper">
@@ -40,7 +44,7 @@
           id="family-income-1"
           name="income"
           type="radio"
-          value="0"
+          value="1 membro"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-1">1 membro </label><br />
@@ -49,7 +53,7 @@
           id="family-income-2"
           name="income"
           type="radio"
-          value="1"
+          value="2 membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-2">2 membros </label><br />
@@ -58,7 +62,7 @@
           id="family-income-3"
           name="income"
           type="radio"
-          value="2"
+          value="3 membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-3">3 membros </label><br />
@@ -67,7 +71,7 @@
           id="family-income-4"
           name="income"
           type="radio"
-          value="3"
+          value="4 ou mais membros"
           [(ngModel)]="formQuestions.questionSeven"
         />
         <label for="family-income-4">4 ou mais membros </label><br />
@@ -84,9 +88,11 @@
             id="working-condition-1"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionOne"
-            (change)="(!formQuestions.questionsEight.optionOne)"
-            [(ngModel)]="formQuestions.questionsEight.optionOne"
+            [checked]="formQuestions.questionEight.optionOne"
+            (change)="
+              formQuestions.questionEight.optionOne = 'Funcionário Público'
+            "
+            [(ngModel)]="formQuestions.questionEight.optionOne"
           />
           <label for="working-condition-1">Funcionário Público </label><br />
 
@@ -94,9 +100,9 @@
             id="working-condition-2"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionTwo"
-            (change)="(!formQuestions.questionsEight.optionTwo)"
-            [(ngModel)]="formQuestions.questionsEight.optionTwo"
+            [checked]="formQuestions.questionEight.optionTwo"
+            (change)="formQuestions.questionEight.optionTwo = 'Empregado CLT'"
+            [(ngModel)]="formQuestions.questionEight.optionTwo"
           />
           <label for="working-condition-2">Empregado CLT </label><br />
 
@@ -104,9 +110,11 @@
             id="working-condition-3"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionThree"
-            (change)="(!formQuestions.questionsEight.optionThree)"
-            [(ngModel)]="formQuestions.questionsEight.optionThree"
+            [checked]="formQuestions.questionEight.optionThree"
+            (change)="
+              !(formQuestions.questionEight.optionThree = 'Desempregado')
+            "
+            [(ngModel)]="formQuestions.questionEight.optionThree"
           />
           <label for="working-condition-3">Desempregado </label><br />
 
@@ -114,9 +122,13 @@
             id="working-condition-4"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionFour"
-            (change)="(!formQuestions.questionsEight.optionFour)"
-            [(ngModel)]="formQuestions.questionsEight.optionFour"
+            [checked]="formQuestions.questionEight.optionFour"
+            (change)="
+              !(formQuestions.questionEight.optionFour =
+                'Trabalhador Informal (trabalho onde não há contribuição de tributos
+            e impostos, como :INSS, IS, IR)')
+            "
+            [(ngModel)]="formQuestions.questionEight.optionFour"
           />
           <label for="working-condition-4"
             >Trabalhador Informal (trabalho onde não há contribuição de tributos
@@ -127,9 +139,12 @@
             id="working-condition-5"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionFive"
-            (change)="(!formQuestions.questionsEight.optionFive)"
-            [(ngModel)]="formQuestions.questionsEight.optionFive"
+            [checked]="formQuestions.questionEight.optionFive"
+            (change)="
+              !(formQuestions.questionEight.optionFive =
+                'Trabalhador Autônomo (Há contribuição - MEI p.ex.)')
+            "
+            [(ngModel)]="formQuestions.questionEight.optionFive"
           />
           <label for="working-condition-5"
             >Trabalhador Autônomo (Há contribuição - MEI p.ex.) </label
@@ -139,9 +154,12 @@
             id="working-condition-6"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionSix"
-            (change)="(!formQuestions.questionsEight.optionSix)"
-            [(ngModel)]="formQuestions.questionsEight.optionSix"
+            [checked]="formQuestions.questionEight.optionSix"
+            (change)="
+              !(formQuestions.questionEight.optionSix =
+                'Pescador/agricultor familiar')
+            "
+            [(ngModel)]="formQuestions.questionEight.optionSix"
           />
           <label for="working-condition-6">Pescador/agricultor familiar </label
           ><br />
@@ -150,9 +168,9 @@
             id="working-condition-7"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionSeven"
-            (change)="(!formQuestions.questionsEight.optionSeven)"
-            [(ngModel)]="formQuestions.questionsEight.optionSeven"
+            [checked]="formQuestions.questionEight.optionSeven"
+            (change)="!(formQuestions.questionEight.optionSeven = 'Aposentado')"
+            [(ngModel)]="formQuestions.questionEight.optionSeven"
           />
           <label for="working-condition-7">Aposentado </label><br />
 
@@ -160,9 +178,11 @@
             id="working-condition-8"
             name="working-condition"
             type="checkbox"
-            [checked]="formQuestions.questionsEight.optionEigth"
-            (change)="(!formQuestions.questionsEight.optionEigth)"
-            [(ngModel)]="formQuestions.questionsEight.optionEigth"
+            [checked]="formQuestions.questionEight.optionEigth"
+            (change)="
+              !(formQuestions.questionEight.optionEigth = 'Beneficiário INSS')
+            "
+            [(ngModel)]="formQuestions.questionEight.optionEigth"
           />
           <label for="working-condition-8">Beneficiário INSS </label><br />
         </div>
@@ -176,8 +196,8 @@
           id="income-condition-1"
           name="income-condition"
           type="radio"
-          value="0"
-          [(ngModel)]="formQuestions.questionsNine"
+          value="sem renda"
+          [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-1">Sem renda </label><br />
 
@@ -185,8 +205,8 @@
           id="income-condition-2"
           name="income-condition"
           type="radio"
-          value="1"
-          [(ngModel)]="formQuestions.questionsNine"
+          value="renda até um salário"
+          [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-2">Renda até um salário</label><br />
 
@@ -194,8 +214,8 @@
           id="income-condition-3"
           name="income-condition"
           type="radio"
-          value="2"
-          [(ngModel)]="formQuestions.questionsNine"
+          value="renda acima de um salário"
+          [(ngModel)]="formQuestions.questionNine"
         />
         <label for="income-condition-3">Renda acima de um salário </label><br />
       </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormQuestions } from '../models/form-questions';
+import { UserFormQuestions } from '../models/user-form-questions';
 import { FormDataService } from '../services/form-data.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { FormDataService } from '../services/form-data.service';
   styleUrls: ['./form-step-one.component.scss'],
 })
 export class FormStepOneComponent implements OnInit {
-  formQuestions: FormQuestions;
+  formQuestions: UserFormQuestions;
 
   constructor(public formDataService: FormDataService) {
     this.formQuestions = formDataService.formQuestions;

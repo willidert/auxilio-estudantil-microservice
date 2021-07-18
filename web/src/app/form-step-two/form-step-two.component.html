@@ -7,7 +7,7 @@
       </div>
       <div class="step-2">
         <span class="number active"> 2 </span>
-        <p>Família</p>
+        <p>Renda Familiar</p>
       </div>
       <div class="step-2">
         <span class="number"> 3 </span>
@@ -25,9 +25,13 @@
         <span class="number"> 6 </span>
         <p>Saúde</p>
       </div>
+      <div class="step-2">
+        <span class="number"> 7 </span>
+        <p>Familía</p>
+      </div>
     </div>
     <div class="title">
-      <span>Step 2/5</span>
+      <span>Step 2/7</span>
       <h3>Informações iniciais</h3>
     </div>
     <div class="form-wrapper">
@@ -40,7 +44,7 @@
           id="income-1"
           name="income"
           type="radio"
-          value="0"
+          value="inferior a 272,22"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-1">inferior a 272,22 </label><br />
@@ -49,7 +53,7 @@
           id="income-2"
           name="income"
           type="radio"
-          value="1"
+          value="R$ 272,23, a 544,46"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-2">R$ 272,23, a 544,46 </label><br />
@@ -58,7 +62,7 @@
           id="income-3"
           name="income"
           type="radio"
-          value="2"
+          value="R$ 544,47 a 680,58"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-3">R$ 544,47 a 680,58 </label><br />
@@ -67,7 +71,7 @@
           id="income-4"
           name="income"
           type="radio"
-          value="3"
+          value="R$ 680,59 a 816,70"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-4">R$ 680,59 a 816,70 </label><br />
@@ -76,7 +80,7 @@
           id="income-5"
           name="income"
           type="radio"
-          value="4"
+          value="R$ 816,71 a 952,82"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-5">R$ 816,71 a 952,82 </label><br />
@@ -85,7 +89,7 @@
           id="income-6"
           name="income"
           type="radio"
-          value="5"
+          value="R$ 952,83 a 1.088,94"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-6">R$ 952,83 a 1.088,94 </label><br />
@@ -94,25 +98,25 @@
           id="income-7"
           name="income"
           type="radio"
-          value="6"
+          value="R$ 1.088,95 a 1.225,06"
           [(ngModel)]="formQuestions.questionFour"
         />
-        <label for="income-7">R$1.088,95 a 1.225,06 </label><br />
+        <label for="income-7">R$ 1.088,95 a 1.225,06 </label><br />
 
         <input
           id="income-8"
           name="income"
           type="radio"
-          value="7"
+          value="R$ 1.225,07 a 1.497,07"
           [(ngModel)]="formQuestions.questionFour"
         />
-        <label for="income-8">R$ 1.225, 07 a 1.497,07 </label><br />
+        <label for="income-8">R$ 1.225,07 a 1.497,07 </label><br />
 
         <input
           id="income-9"
           name="income"
           type="radio"
-          value="8"
+          value="R$ 1.497,08 a 1.650,00"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-9">R$ 1.497,08 a 1.650,00 </label><br />
@@ -121,7 +125,7 @@
           id="income-10"
           name="income"
           type="radio"
-          value="9"
+          value="superior a 1.650,00"
           [(ngModel)]="formQuestions.questionFour"
         />
         <label for="income-10">superior a 1.650,00 </label><br />
@@ -134,7 +138,7 @@
             id="paid-activity-1"
             name="paid-activity"
             type="radio"
-            value="9"
+            value="sim"
             [(ngModel)]="formQuestions.questionFive"
           />
           <label for="paid-activity-1">Sim</label><br />
@@ -143,7 +147,7 @@
             id="paid-activity-2"
             name="paid-activity"
             type="radio"
-            value="10"
+            value="Não"
             [(ngModel)]="formQuestions.questionFive"
           />
           <label for="paid-activity-2">Não</label><br />
@@ -155,7 +159,7 @@
           id="financial-situation-1"
           name="financial-situation"
           type="radio"
-          value="1"
+          value="Dependente financeiramente dos pais"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-1"
@@ -166,7 +170,7 @@
           id="financial-situation-2"
           name="financial-situation"
           type="radio"
-          value="2"
+          value="Dependente financeiramente de um dos pais"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-2"
@@ -177,7 +181,7 @@
           id="financial-situation-3"
           name="financial-situation"
           type="radio"
-          value="3"
+          value="Dependente financeiramente do cônjuge ou companheiro(a)"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-3"
@@ -188,7 +192,7 @@
           id="financial-situation-4"
           name="financial-situation"
           type="radio"
-          value="4"
+          value="Dependente financeiramente de outros parentes ou amigos"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-4"
@@ -199,7 +203,7 @@
           id="financial-situation-5"
           name="financial-situation"
           type="radio"
-          value="5"
+          value="Independente financeiramente e custeia apenas suas despesas pessoais"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-5"
@@ -210,7 +214,8 @@
           id="financial-situation-6"
           name="financial-situation"
           type="radio"
-          value="6"
+          value="Independente financeiramente e responsável por parte das despesas
+          domésticas"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-6"
@@ -222,7 +227,8 @@
           id="financial-situation-7"
           name="financial-situation"
           type="radio"
-          value="7"
+          value="Independente financeiramente e responsável por todas as despesas
+          domésticas"
           [(ngModel)]="formQuestions.questionSix"
         />
         <label for="financial-situation-7"
