@@ -49,6 +49,13 @@ describe("fill the form automatically", () => {
     cy.wait(500);
     cy.get("#medication-family-1").click();
     cy.wait(500);
+    cy.get("button[routerLink='/form-step-seven']").click();
+    cy.get("#dependent-2").click();
+    cy.wait(500);
+    cy.get("#schooling-2").click();
+    cy.wait(500);
+    cy.get("#mother-schooling-5").click();
+    cy.wait(500);
     cy.get("button").contains("Finalizar").click();
   });
 });
