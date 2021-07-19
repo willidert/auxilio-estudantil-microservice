@@ -1,27 +1,55 @@
-# Web
+# Web 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
+#### Responsável: Mateus Bentes Marreira
 
-## Development server
+## Funcionalidade 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Neste serviço foi implementado a funcionalidade de formuário que o usuário vai preencher no frontend. O formulário tem a seguinte aparência com vários campos para serem preenchidos. 
 
-## Code scaffolding
+![Imagem do formuário](https://cdn.discordapp.com/attachments/640981909777940521/866495811109126154/unknown.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ele irá enviar um JSON com os dados do aluno e será mandado para a [API](https://github.com/willidert/auxilio-estudantil-microservice/tree/main/api). Por exemplo: 
 
-## Build
+```json
+{
+  "email": "mateus.bentes@gmail.com",
+  "questionEight": {
+    "optionOne": "",
+    "optionTwo": "",
+    "optionThree": "Desempregado",
+    "optionFour": "",
+    "optionFive": "Trabalhador Autônomo (Há contribuição - MEI p.ex.)",
+    "optionSix": "Pescador/agricultor familiar",
+    "optionSeven": "",
+    "optionEight": ""
+  },
+  "questionEighteen": "sim",
+  "questionEleven": "Alugada",
+  "questionFifteen": "nao",
+  "questionFive": "Sim",
+  "questionFour": "R$ 816,71 a 952,82",
+  "questionFourteen": "nao",
+  "questionNine": "renda até um salário",
+  "questionNineteen": "nao",
+  "questionOne": "nao",
+  "questionSeven": "4 ou mais membros",
+  "questionSeventeen": "sim",
+  "questionSix": "Dependente financeiramente dos pais",
+  "questionSixteen": "sim",
+  "questionTen": "Sim, no mesmo município do campus",
+  "questionThirteen": "1 a 2 conduções",
+  "questionThree": "nao",
+  "questionTwelve": "transporte Público",
+  "questionTwenty": "3",
+  "questionTwentyOne": "Ensino Superior",
+  "questionTwentyTwo": "Ensino Superior",
+  "questionTwo": "sim"
+}
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Running unit tests
+## Design Patterns utilizados 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Injeção de Dependência 
+Angular nos provê uma forma fácil de injetar as dependencias entre nossos componentes, essa feature é algo nativo do próprio angular **para nos trazer mais produtividade no desenvolvimento e manter em baixo nível o acoplamento entre os módulos**. Angular cria uma instância de Logger para o nosso componente através do construtor por baixo dos panos. Nosso papel é apenas utilizá-lo. Ex.: 
+![Injeção de Dependência](https://cdn.discordapp.com/attachments/640981909777940521/866503310432010250/carbon1.png)
