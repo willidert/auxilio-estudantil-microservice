@@ -1,0 +1,24 @@
+POST http://localhost:5000/clean/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "mateus.bentes@gmail.com",
+    "questionEight": "Desempregado;Trabalhador Autônomo (Há contribuição - MEI p.ex.);Pescador/agricultor familiar;",
+    "questionEighteen": "sim",
+    "questionEleven": "Alugada",
+    "questionFifteen": "nao",
+    "questionFive": "Sim",
+    "questionFour": "R$ 816,71 a 952,82",
+    "questionFourteen": "nao",
+    "questionNine": "renda até um salário",
+    "questionOne": "nao",
+    "questionSeven": "4 ou mais membros",
+    "questionSeventeen": "sim",
+    "questionSix": "Dependente financeiramente dos pais",
+    "questionSixteen": "sim",
+    "questionTen": "Sim, no mesmo município do campus",
+    "questionThirteen": "1 a 2 conduções",
+    "questionThree": "nao",
+    "questionTwelve": "transporte Público",
+    "questionTwo": "sim"
+}
