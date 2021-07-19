@@ -18,11 +18,8 @@ class DataBaseConnection(object):
     def __init__(self, domain='mongodb', port='27017', username='root', password="example"):
        
         try:
-            self.__client = MongoClient(
-                host = [ str(domain) + ":" + str(port) ],
-                serverSelectionTimeoutMS = 3000, 
-                username = username,
-                password = password,
+            self.__client = MongoClient(f"mongodb://{username}:{password}@{domain}:{port}/{database_name}",
+                serverSelectionTimeoutMS = timeout, 
             )
 
         except errors.ServerSelectionTimeoutError as err:
