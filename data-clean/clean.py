@@ -1,19 +1,15 @@
-import sklearn
 import pandas as pd
 import numpy as np
 import json
 
-#with open('/home/shakka/Documentos/codes/auxilio-estudantil-microservice/data-clean/data.json','r') as f:
-  #df = json.load(f)
 
 def gloriosafuncao(df):
     
     df = pd.DataFrame([df])
 
     numerico = [
-            11,"email", 1, 2, 3, 7, 8, 9, 12, 10, 14, 13, 16, 15, 17, 18, 19, 20, 21, 4, 5, 6
-]
-    {"questionEight":"Funcionário Público;Aposentado;","email":"teste@gmail.com","questionOne":"nao","questionTwo":"nao","questionThree":"Graduação","questionFour":"superior a 1.650,00","questionFive":"Não","questionSix":"Dependente financeiramente dos pais","questionNine":"sem renda","questionSeven":"4 ou mais membros","questionEleven":"Alugada","questionTen":"Sim, no mesmo município do campus","questionThirteen":"1 a 2 conduções","questionTwelve":"transporte Público","questionFourteen":"sim","questionFifteen":"sim","questionSixteen":"nao","questionSeventeen":"nao","questionEighteen":"sim","questionTwenty":"Nenhum","questionTwentyOne":"Ensino superior","questionTwentyTwo":"Ensino superior"}
+            11,"email", 1, 2, 3, 7, 8, 9, 12, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 4, 5, 6
+    ]
 
     df.columns = numerico
 
@@ -87,7 +83,7 @@ def gloriosafuncao(df):
             'PPI',
             'ProgramasSociais',
             #'Beneficiario',
-            #'AtividadeRemunerada',
+            'AtividadeRemunerada',
             'MoraCidadeCampus',
             'DoencaCronica',
             'Medicacao',
@@ -110,7 +106,7 @@ def gloriosafuncao(df):
     for elemento in binario:
         df_binario[elemento] = df[elemento].replace(['sim', 'nao'], [1, 0]).astype(int)
 
-    df_binario['AtividadeRemunerada'] = df['AtividadeRemunerada'].replace(['Sim', 'Não'], [1, 0]).astype(int)
+    # df_binario['AtividadeRemunerada'] = df['AtividadeRemunerada'].replace(['Sim', 'Não'], [1, 0]).astype(int)
 
     modalidade_map = {
         'Graduação': 1,
@@ -192,8 +188,40 @@ def gloriosafuncao(df):
         qtd[iqtd] = df['QtdResponsaveisFinanceiros'].map(lambda x: int(1) if iqtd in x else int(0))
 
     dados_limpos = pd.concat([df_binario, label_encode, qtd], axis=1)
+    
+    ordem = ['PPI',
+    'ProgramasSociais',
+    'AtividadeRemunerada',
+    'MoraCidadeCampus',
+    'DoencaCronica',
+    'Medicacao',
+    'Deficiencia',
+    'FDoencaCronica',
+    'FMedicacao',
+    'AteDois',
+    'Desempregado',
+    'Informal',
+    'Autonomo',
+    'Aposentado',
+    'CLT',
+    'INSS',
+    'FuncionarioPublico',
+    'ModalidadeEnsino',
+    'CondMoradia',
+    'TipoTransporte',
+    'EscolaridadeMae',
+    'EscolaridadePai',
+    'RendaPerCapita',
+    'SituacaoFinanceira',
+    'QtdDependentes',
+    'NConducoes',
+    'CondicaoRenda',
+    'ResFin_1',
+    'ResFin_2',
+    'ResFin_3',
+    'ResFin_4ouMais']
 
-    dados = dados_limpos.columns.to_list()
-    dados_limpos = dados_limpos[dados[:2] + [dados[16]] + dados[2:16] + dados[16+1:]]
+    dados_limpos = dados_limpos[ordem]
+    dados_limpos['email'] = df['email']
     
     return np.array(dados_limpos.loc[0]).reshape(1, -1)

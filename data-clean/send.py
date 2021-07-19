@@ -2,8 +2,7 @@
 import pika
 
 def send(data):
-    credentials = pika.PlainCredentials(username='admin', password='admin')
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', credentials=credentials))
+    connection = pika.BlockingConnection(pika.URLParameters('amqp://admin:admin@rabbitmq:5672'))
     channel = connection.channel()
 
     channel.queue_declare(queue='model')
