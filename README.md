@@ -11,13 +11,7 @@
 
 ## Descrição do Problema
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum egestas velit, commodo molestie est tristique in. Cras
-
-elementum ante a quam lacinia ullamcorper. Integer pulvinar purus ut tellus faucibus scelerisque. Morbi quis ex vel dui 
-
-commodo vestibulum eget a erat. Ut volutpat mauris auctor rutrum tincidunt. Vestibulum et ante tempor, porta lorem eleifend, 
-
-porta augue. Etiam tincidunt arcu eros, in lacinia dolor vehicula nec
+Anualmente muitos alunos acessam o sistema para participarem das inscrições para o PNAES, como forma de auxiliar a equipe de assistência social do campus foi desenvolvido um modelo para realizar as predições dos alunos que podem ou não receber auxílio do campus. Considerando o pico de acessos em determinados períodos do ano e que as inscrições para o PNAES podem ser feitas de forma independete do resto do sistema, foi implementada uma arquitetura em microsserviços para servir o modelo que faz a predição.
 
 ## Arquitetura
 
