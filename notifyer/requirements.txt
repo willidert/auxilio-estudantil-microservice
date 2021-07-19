@@ -1,0 +1,6 @@
+pymongo
+bson=0.5.10 
+motor=2.4.0
+pip install simple_json_logger=0.2.3
+pip install pathdict=0.0.9
+mongo_observer=0.0.1
