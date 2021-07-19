@@ -1,17 +1,19 @@
 import sklearn
 import pandas as pd
+import numpy as np
 import json
 
-with open('/home/shakka/Documentos/codes/auxilio-estudantil-microservice/data-clean/data.json','r') as f:
-  df = json.load(f)
+#with open('/home/shakka/Documentos/codes/auxilio-estudantil-microservice/data-clean/data.json','r') as f:
+  #df = json.load(f)
 
 def gloriosafuncao(df):
     
     df = pd.DataFrame([df])
 
     numerico = [
-                "email", 8, 18, 11, 15, 5, 4, 14, 9, 1, 7, 17, 6, 16, 10, 13, 3, 12, 2
-    ]
+            11,"email", 1, 2, 3, 7, 8, 9, 12, 10, 14, 13, 16, 15, 17, 18, 19, 20, 21, 4, 5, 6
+]
+    {"questionEight":"Funcionário Público;Aposentado;","email":"teste@gmail.com","questionOne":"nao","questionTwo":"nao","questionThree":"Graduação","questionFour":"superior a 1.650,00","questionFive":"Não","questionSix":"Dependente financeiramente dos pais","questionNine":"sem renda","questionSeven":"4 ou mais membros","questionEleven":"Alugada","questionTen":"Sim, no mesmo município do campus","questionThirteen":"1 a 2 conduções","questionTwelve":"transporte Público","questionFourteen":"sim","questionFifteen":"sim","questionSixteen":"nao","questionSeventeen":"nao","questionEighteen":"sim","questionTwenty":"Nenhum","questionTwentyOne":"Ensino superior","questionTwentyTwo":"Ensino superior"}
 
     df.columns = numerico
 
@@ -19,11 +21,11 @@ def gloriosafuncao(df):
             'email',
             'PPI',
             'ProgramasSociais',
-            #'ModalidadeEnsino',
-            'Beneficiario',
-            #'QtdDependentes',
-            #'EscolaridadePai',
-            #'EscolaridadeMae',
+            'ModalidadeEnsino',
+            #'Beneficiario',
+            'QtdDependentes',
+            'EscolaridadePai',
+            'EscolaridadeMae',
             'RendaPerCapita',
             'AtividadeRemunerada',
             'SituacaoFinanceira',
@@ -41,9 +43,9 @@ def gloriosafuncao(df):
             'FMedicacao',
         ]
 
-    nomes_ordenados = df.columns.to_list()[1:]
+    nomes_ordenados = [df.columns.to_list()[0]] + df.columns.to_list()[2:]
     nomes_ordenados.sort()
-    nomes_ordenados = [df.columns.to_list()[0]] + nomes_ordenados
+    nomes_ordenados = [df.columns.to_list()[1]] + nomes_ordenados
 
     df = df [nomes_ordenados]
     df.columns = labels
@@ -73,13 +75,13 @@ def gloriosafuncao(df):
     for rotulo, cond in zip(rotulos, condicoes):
         df[rotulo] = df['CondicaoTrabalho'].map(lambda x: 'sim' if cond in x else 'nao')
 
-        df['MoraCidadeCampus'] = df['MoraCidadeCampus'].apply(lambda x: x.split(',')[0].lower())
+    df['MoraCidadeCampus'] = df['MoraCidadeCampus'].apply(lambda x: x.split(',')[0].lower())
 
-        df['TipoTransporte'] = df['TipoTransporte'].apply(lambda x: ''.join(x.split()[1]).capitalize())
+    df['TipoTransporte'] = df['TipoTransporte'].apply(lambda x: ''.join(x.split()[1]).capitalize())
 
-        df['AteDois'] = df['QtdResponsaveisFinanceiros'].apply(lambda x: 'sim' if ' '.join(x.split()[:-1]) == '1' or ' '.join(x.split()[:-1]) == '2' else 'nao')
+    df['AteDois'] = df['QtdResponsaveisFinanceiros'].apply(lambda x: 'sim' if ' '.join(x.split()[:-1]) == '1' or ' '.join(x.split()[:-1]) == '2' else 'nao')
 
-        df[['TipoTransporte', 'QtdResponsaveisFinanceiros', 'MoraCidadeCampus', 'AteDois']].head()
+    df[['TipoTransporte', 'QtdResponsaveisFinanceiros', 'MoraCidadeCampus', 'AteDois']].head()
 
     binario = [
             'PPI',
@@ -108,7 +110,7 @@ def gloriosafuncao(df):
     for elemento in binario:
         df_binario[elemento] = df[elemento].replace(['sim', 'nao'], [1, 0]).astype(int)
 
-    df_binario['AtividadeRemunerada'] = df['AtividadeRemunerada'].replace(['Sim', 'Nao'], [1, 0]).astype(int)
+    df_binario['AtividadeRemunerada'] = df['AtividadeRemunerada'].replace(['Sim', 'Não'], [1, 0]).astype(int)
 
     modalidade_map = {
         'Graduação': 1,
@@ -149,9 +151,9 @@ def gloriosafuncao(df):
     valores = [4 , 2, 2, 1, 4, 5, 1]
     situacao_fin_map = {k: v for k, v in zip(categorias, valores)}
 
-    # categorias = df['QtdDependentes'].astype('category').cat.categories.tolist()
-    # valores = [2, 3, 4, 5, 1]
-    # dependentes_map = {k: v for k, v in zip(categorias, valores)}
+    categorias = df['QtdDependentes'].astype('category').cat.categories.tolist()
+    valores = [2, 3, 4, 5, 1]
+    dependentes_map = {k: v for k, v in zip(categorias, valores)}
 
     categorias = df['NConducoes'].astype('category').cat.categories.tolist()
     valores = [2, 3, 1]
@@ -161,20 +163,19 @@ def gloriosafuncao(df):
     valores = [1, 2, 3]
     cond_renda_map = {k: v for k, v in zip(categorias, valores)}
 
-    labels = ['CondMoradia', 'TipoTransporte', 'RendaPerCapita', 'SituacaoFinanceira', 'NConducoes', 'CondicaoRenda']
-    # "ModalidadeEnsino", "EscolaridadeMae", "EscolaridadePai", "QtdDependentes"
+    labels = ['CondMoradia', 'TipoTransporte', 'RendaPerCapita', 'SituacaoFinanceira', 'NConducoes', 'CondicaoRenda', "ModalidadeEnsino", "EscolaridadeMae", "EscolaridadePai", "QtdDependentes" ]
     label_encode = df[labels].copy()
 
     label_encode['CondMoradia'].replace(moradia_map, inplace=True)
     label_encode['TipoTransporte'].replace(transporte_map, inplace=True)
-    #label_encode['EscolaridadePai'].replace(escolaridade_map, inplace=True)
-    #label_encode['EscolaridadeMae'].replace(escolaridade_map, inplace=True)
+    label_encode['EscolaridadePai'].replace(escolaridade_map, inplace=True)
+    label_encode['EscolaridadeMae'].replace(escolaridade_map, inplace=True)
     label_encode['SituacaoFinanceira'].replace(situacao_fin_map, inplace=True)
     label_encode['RendaPerCapita'].replace(renda_percapita_map, inplace=True)
-    #label_encode['QtdDependentes'].replace(dependentes_map, inplace=True)
+    label_encode['QtdDependentes'].replace(dependentes_map, inplace=True)
     label_encode['NConducoes'].replace(conducoes_map, inplace=True)
     label_encode['CondicaoRenda'].replace(cond_renda_map, inplace=True)
-    #label_encode['ModalidadeEnsino'].replace(modalidade_map, inplace=True)
+    label_encode['ModalidadeEnsino'].replace(modalidade_map, inplace=True)
 
     qtd = pd.DataFrame()
     qtd_res = ['ResFin_1', 'ResFin_2', 'ResFin_3', 'ResFin_4ouMais']
@@ -194,5 +195,5 @@ def gloriosafuncao(df):
 
     dados = dados_limpos.columns.to_list()
     dados_limpos = dados_limpos[dados[:2] + [dados[16]] + dados[2:16] + dados[16+1:]]
-
-    return dados_limpos
+    
+    return np.array(dados_limpos.loc[0]).reshape(1, -1)
