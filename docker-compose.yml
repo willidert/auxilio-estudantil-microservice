@@ -60,7 +60,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=admin
     networks:
       - app-network
-  
+
   model:
     build: ./model
     container_name: model
@@ -73,7 +73,7 @@ services:
       - ./model/:/app
     networks:
       - app-network
-  
+
   data-clean:
     build: ./data-clean
     container_name: data-clean
@@ -81,6 +81,18 @@ services:
     command: ["./wait-for-it.sh", "rabbitmq:5672", "--", "python3", "receive.py"]
     volumes:
       - ./data-clean/:/app
+    networks:
+      - app-network
+
+  notifyer:
+    build: ./notifyer
+    container_name: notifyer
+    working_dir: /notifyer
+    restart: always
+    volumes:
+      - ./notifyer/:/notifyer
+    ports:
+      - 465:465
     networks:
       - app-network
 
