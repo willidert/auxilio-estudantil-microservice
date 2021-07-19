@@ -7,7 +7,7 @@
       </div>
       <div class="step-2">
         <span class="number"> 2 </span>
-        <p>Família</p>
+        <p>Renda Familiar</p>
       </div>
       <div class="step-2">
         <span class="number"> 3 </span>
@@ -25,9 +25,13 @@
         <span class="number active"> 6 </span>
         <p>Saúde</p>
       </div>
+      <div class="step-2">
+        <span class="number"> 7 </span>
+        <p>Familía</p>
+      </div>
     </div>
     <div class="title">
-      <span>Step 6/6</span>
+      <span>Step 6/7</span>
       <h3>Saúde</h3>
     </div>
     <div class="form-wrapper">
@@ -37,8 +41,8 @@
           id="disease-1"
           name="disease"
           type="radio"
-          value="0"
-          [(ngModel)]="formQuestions.questionsFourteen"
+          value="sim"
+          [(ngModel)]="formQuestions.questionFourteen"
         />
         <label for="disease-1">Sim </label><br />
 
@@ -46,8 +50,8 @@
           id="disease-2"
           name="disease"
           type="radio"
-          value="1"
-          [(ngModel)]="formQuestions.questionsFourteen"
+          value="nao"
+          [(ngModel)]="formQuestions.questionFourteen"
         />
         <label for="disease-2">Não </label><br />
       </div>
@@ -59,8 +63,8 @@
             id="medication-1"
             name="medication"
             type="radio"
-            value="0"
-            [(ngModel)]="formQuestions.questionsFifteen"
+            value="sim"
+            [(ngModel)]="formQuestions.questionFifteen"
           />
           <label for="medication-1">Sim </label><br />
 
@@ -68,8 +72,8 @@
             id="medication-2"
             name="medication"
             type="radio"
-            value="1"
-            [(ngModel)]="formQuestions.questionsFifteen"
+            value="nao"
+            [(ngModel)]="formQuestions.questionFifteen"
           />
           <label for="medication-2">Não </label><br />
         </div>
@@ -82,8 +86,8 @@
             id="deficiency-1"
             name="deficiency"
             type="radio"
-            value="0"
-            [(ngModel)]="formQuestions.questionsSixteen"
+            value="sim"
+            [(ngModel)]="formQuestions.questionSixteen"
           />
           <label for="deficiency-1">Sim </label><br />
 
@@ -91,8 +95,8 @@
             id="deficiency-2"
             name="deficiency"
             type="radio"
-            value="1"
-            [(ngModel)]="formQuestions.questionsSixteen"
+            value="nao"
+            [(ngModel)]="formQuestions.questionSixteen"
           />
           <label for="deficiency-2">Não </label><br />
         </div>
@@ -105,8 +109,8 @@
             id="disease-family-1"
             name="disease-family"
             type="radio"
-            value="0"
-            [(ngModel)]="formQuestions.questionsSeventeen"
+            value="sim"
+            [(ngModel)]="formQuestions.questionSeventeen"
           />
           <label for="disease-family-1">Sim </label><br />
 
@@ -114,8 +118,8 @@
             id="disease-family-2"
             name="disease-family"
             type="radio"
-            value="1"
-            [(ngModel)]="formQuestions.questionsSeventeen"
+            value="nao"
+            [(ngModel)]="formQuestions.questionSeventeen"
           />
           <label for="disease-family-2">Não </label><br />
         </div>
@@ -128,8 +132,8 @@
             id="medication-family-1"
             name="medication-family"
             type="radio"
-            value="0"
-            [(ngModel)]="formQuestions.questionsEighteen"
+            value="sim"
+            [(ngModel)]="formQuestions.questionEighteen"
           />
           <label for="medication-family-1">Sim </label><br />
 
@@ -137,8 +141,8 @@
             id="medication-family-2"
             name="medication-family"
             type="radio"
-            value="1"
-            [(ngModel)]="formQuestions.questionsEighteen"
+            value="nao"
+            [(ngModel)]="formQuestions.questionEighteen"
           />
           <label for="medication-family-2">Não </label><br />
         </div>
@@ -146,8 +150,8 @@
 
       <div class="button">
         <button type="button" routerLink="/form-step-five">Voltar</button>
-        <button (click)="log()" (click)="submitForm()" type="button">
-          Finalizar
+        <button (click)="log()" routerLink="/form-step-seven" type="button">
+          Avancar
         </button>
       </div>
     </div>

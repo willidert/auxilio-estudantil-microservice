@@ -1,16 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormQuestions } from '../models/form-questions';
+import { UserFormQuestions } from '../models/user-form-questions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FormDataService {
-  formQuestions: FormQuestions;
+  formQuestions: UserFormQuestions;
   readonly apiURL: string;
 
   constructor(private http: HttpClient) {
-    this.formQuestions = new FormQuestions();
+    this.formQuestions = new UserFormQuestions();
     this.apiURL = 'http://localhost:3333';
   }
 

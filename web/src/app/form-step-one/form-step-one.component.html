@@ -7,7 +7,7 @@
       </div>
       <div class="step-2">
         <span class="number"> 2 </span>
-        <p>Família</p>
+        <p>Renda Familiar</p>
       </div>
       <div class="step-2">
         <span class="number"> 3 </span>
@@ -25,12 +25,19 @@
         <span class="number"> 6 </span>
         <p>Saúde</p>
       </div>
+      <div class="step-2">
+        <span class="number"> 7 </span>
+        <p>Familía</p>
+      </div>
     </div>
     <div class="title">
-      <span>Step 1/5</span>
+      <span>Step 1/7</span>
       <h3>Informações iniciais</h3>
     </div>
     <div class="form-wrapper">
+      <div>
+        <app-user-email></app-user-email>
+      </div>
       <div>
         <p>1. Você é autodeclarado Preto, Pardo ou Indígena? *</p>
         <input
@@ -78,23 +85,39 @@
         </div>
       </div>
       <div>
-        <p>3. Recebe auxílio estudantil do campus? *</p>
+        <p>3. Qual sua modalidade de ensino? *</p>
         <input
           id="student-aid-1"
           name="student-aid"
           type="radio"
-          value="sim"
+          value="Graduação"
           [(ngModel)]="formQuestions.questionThree"
         />
-        <label for="student-aid-1">Sim</label><br />
+        <label for="student-aid-1">Graduação</label><br />
         <input
           id="student-aid-2"
           name="student-aid"
           type="radio"
-          value="nao"
+          value="Médio Integrado EJA"
           [(ngModel)]="formQuestions.questionThree"
         />
-        <label for="student-aid-2">Não</label><br />
+        <label for="student-aid-2">Médio Integrado EJA</label><br />
+        <input
+          id="student-aid-3"
+          name="student-aid"
+          type="radio"
+          value="Médio Técnico Integrado"
+          [(ngModel)]="formQuestions.questionThree"
+        />
+        <label for="student-aid-3">Médio Técnico Integrado</label><br />
+        <input
+          id="student-aid-4"
+          name="student-aid"
+          type="radio"
+          value="Técnico Subsequente"
+          [(ngModel)]="formQuestions.questionThree"
+        />
+        <label for="student-aid-4">Técnico Subsequente</label><br />
       </div>
       <button
         (click)="log()"

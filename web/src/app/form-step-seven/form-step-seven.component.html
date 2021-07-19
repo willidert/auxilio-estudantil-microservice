@@ -1,0 +1,196 @@
+<div class="wrapper">
+  <div class="personal-detail">
+    <div class="summary">
+      <div class="step-1">
+        <span class="number"> 1 </span>
+        <p>Informações iniciais</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 2 </span>
+        <p>Renda Familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 3 </span>
+        <p>Renda familiar</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 4 </span>
+        <p>Habitação</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 5</span>
+        <p>Transporte</p>
+      </div>
+      <div class="step-2">
+        <span class="number"> 6 </span>
+        <p>Saúde</p>
+      </div>
+      <div class="step-2">
+        <span class="number active"> 7 </span>
+        <p>Familía</p>
+      </div>
+    </div>
+    <div class="title">
+      <span>Step 7/7</span>
+      <h3>Informações iniciais</h3>
+    </div>
+    <div class="form-wrapper">
+      <div>
+        <p>19. Quantos dependentes você possui ? *</p>
+        <input
+          id="dependent-1"
+          name="dependent"
+          type="radio"
+          value="Nenhum"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-1">Nenhum</label><br />
+
+        <input
+          id="dependent-2"
+          name="dependent"
+          type="radio"
+          value="1"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-2">1</label><br />
+        <input
+          id="dependent-3"
+          name="dependent"
+          type="radio"
+          value="2"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-3">2</label><br />
+        <input
+          id="dependent-4"
+          name="dependent"
+          type="radio"
+          value="3"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-4">3</label><br />
+        <input
+          id="dependent-5"
+          name="dependent"
+          type="radio"
+          value="4 ou mais"
+          [(ngModel)]="formQuestions.questionTwenty"
+        />
+        <label for="dependent-5">4 ou mais</label><br />
+      </div>
+
+      <div>
+        <p>20. Qual é o grau de escolaridade do seu pai ou responsável? *</p>
+        <div class="group-1">
+          <input
+            id="schooling-1"
+            name="schooling"
+            type="radio"
+            value="Sem escolaridade"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-1">Sem escolaridade</label><br />
+
+          <input
+            id="schooling-2"
+            name="schooling"
+            type="radio"
+            value="Ensino fundamental"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-2">Ensino fundamental</label><br />
+          <input
+            id="schooling-3"
+            name="schooling"
+            type="radio"
+            value="Ensino médio"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-3">Ensino médio</label><br />
+          <input
+            id="schooling-4"
+            name="schooling"
+            type="radio"
+            value="Ensino superior"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-4">Ensino superior</label><br />
+          <input
+            id="schooling-5"
+            name="schooling"
+            type="radio"
+            value="Desconheço"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-5">Desconheço</label><br />
+          <input
+            id="schooling-6"
+            name="schooling"
+            type="radio"
+            value="Não se aplica"
+            [(ngModel)]="formQuestions.questionTwentyOne"
+          />
+          <label for="schooling-6">Não se aplica</label><br />
+        </div>
+      </div>
+      <div>
+        <p>21. Qual é o grau de escolaridade da sua mãe ou responsável? ? *</p>
+        <input
+          id="mother-schooling-1"
+          name="mother-schooling"
+          type="radio"
+          value="Sem escolaridade"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-1">Sem escolaridade</label><br />
+        <input
+          id="mother-schooling-2"
+          name="student-aid"
+          type="radio"
+          value="Ensino fundamental"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-2">Ensino fundamental</label><br />
+        <input
+          id="mother-schooling-3"
+          name="mother-schooling"
+          type="radio"
+          value="Ensino médio"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-3">Ensino médio</label><br />
+        <input
+          id="mother-schooling-4"
+          name="mother-schooling"
+          type="radio"
+          value="Ensino superior"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-4">Ensino superior</label><br />
+        <input
+          id="mother-schooling-5"
+          name="mother-schooling"
+          type="radio"
+          value="Desconheço"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-5">Desconheço</label><br />
+        <input
+          id="mother-schooling-6"
+          name="mother-schooling"
+          type="radio"
+          value="Não se aplica"
+          [(ngModel)]="formQuestions.questionTwentyTwo"
+        />
+        <label for="mother-schooling-6">Não se aplica</label><br />
+      </div>
+      <div class="button">
+        <button type="button" routerLink="/form-step-six">Voltar</button>
+        <button (click)="log()" (click)="submitForm()" type="button">
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
