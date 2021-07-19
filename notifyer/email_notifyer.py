@@ -28,22 +28,4 @@ class SendEmail:
     def send_email(self):
         self.__login()
         server.sendmail(self.__sender_email, self.__receiver_email, message)
-
-
-
-async def run(loop):
-    client = AsyncIOMotorClient('mongozao:27017')
-
-    collection_to_observe = client['your_db']['your_collection']
-    reactive_collection = await ReactiveCollection.init_async(collection_to_observe)
-
-    observer = await Observer.init_async(oplog=client['local']['oplog.rs'],
-                                         operation_handler=reactive_collection,
-                                         namespace_filter='your_db.your_collection')
-
-    loop.create_task(observer.observe_changes())
-
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(run(loop))
-loop.run_forever()
+    
