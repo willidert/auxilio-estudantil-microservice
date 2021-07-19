@@ -4,10 +4,10 @@
 
 |Nome|Matricula|
 |-|-|
-|Mateus Bentes Marreira| 2019003154|
-|William Bentes Marreira| 1231 | 
-|Matheus Fernandes Bentes Marreira| 123|
-|Marios Guilherme Bentes Marreira| 123
+|Mateus Bentes Marreira| 2019003154 |
+|William dos Santos Teixeira| 2019002916 | 
+|Matheus Fernandes Bentes Marreira| 2019008007 |
+|Mario Guilherme Bentes Marreira| 2019007940 |
 
 ## Descrição do Problema
 
