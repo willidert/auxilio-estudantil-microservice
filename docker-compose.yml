@@ -89,6 +89,8 @@ services:
     container_name: notifyer
     working_dir: /notifyer
     restart: always
+    depends_on:
+      - mongodb
     volumes:
       - ./notifyer/:/notifyer
     ports:
