@@ -6,8 +6,8 @@
 |-|-|
 |Mateus Bentes Marreira| 2019003154 |
 |William dos Santos Teixeira| 2019002916 | 
-|Matheus Fernandes Bentes Marreira| 2019008007 |
-|Mario Guilherme Bentes Marreira| 2019007940 |
+|Matheus Fernandes Oliveira| 2019008007 |
+|Mario Guilherme Carvalho| 2019007940 |
 
 ## Descrição do Problema
 
