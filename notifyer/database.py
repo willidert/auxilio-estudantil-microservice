@@ -30,5 +30,10 @@ class DataBaseConnection(object):
 
             print ("py-mongo ERROR:", err)
 
-    
+    def __get_database(self):
+        return self.__client['form-questions']
+   
+    def update(self, email, result: int) -> None:
+        self.__get_database()['user-form-question'].update_one({'email': email}, {'$inc': {'email-sended': result}})
+
 
