@@ -1,15 +1,9 @@
 # Model Service
 
-Serviço responsável pela predição do recebimento ou não do auxílio por um determidado aluno.
+Serviço responsável pela predição do recebimento ou não do auxílio por um determidado aluno. O projeto consome os dados da mensageria, enviados pelo serviço de limpeza e salva a predição no mongodb.
 
-## Rodando o serviço
+## Padrões utilizados
 
-O projeto utiliza uma API REST implementada em [Flask](https://flask.palletsprojects.com/en/2.0.x/) que está na porta 5000.
+Implementei um singleton básico no database.py para gerenciar a conexão com o mongodb, isso evita que várias conexões sejam abertas em paralelo desperdiçando recursos.
 
-```
-python main.py
-```
-
-O serviço espera um `POST` com atributos do aluno no endpoint `/predicao/` e retorna um json `{'res': {resposta}}` contendo 1 para a aprovação e 0 para não aprovação.
-
-O python permite o uso de [decoradores](https://flask.palletsprojects.com/en/latest/patterns/viewdecorators/) para adicionar funcionalidades as funções que uso no endpoint.
+Também há um singleton no model.py para que haja apenas uma instância do modelo em execução.
