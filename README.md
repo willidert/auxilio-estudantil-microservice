@@ -33,6 +33,9 @@ porta augue. Etiam tincidunt arcu eros, in lacinia dolor vehicula nec
 * Microservice 4: ModelService (Python) 
 * Microservice 5: NotifyService (Python) 
 
+## Funcionalidades e Padrões de Projetos 
+A descricão de cada funcionalidade e os Padrões de Projeto utilizados estão separados em cada servico que um membro da equipe implementou. Eles podem ser acessados pelos links na coluna "Serviço" da tabela abaixo: 
+
 |Nome|Serviço|Linguagem|Descrição|Justificativa|
 |-|-|-|---------------------|-|
 |Mateus Bentes|[Frontend](https://github.com/willidert/auxilio-estudantil-microservice/tree/main/web)|Angular|Angular é uma framework de aplicações web de código-fonte aberto e plataforma de desenvolvimento para a criação de aplicativos de página única eficientes e sofisticados.|Angular é uma escolha popular para desenvolvimento de aplicações web, diferente de seus semelhantes, angular tem várias ferramentas built-in que auxiliam no desenvolvimento. É um framework opinativo e possui uma arquitetura escalável e bem sofisticada.|
