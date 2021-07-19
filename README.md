@@ -34,7 +34,7 @@ porta augue. Etiam tincidunt arcu eros, in lacinia dolor vehicula nec
 * Microservice 5: NotifyService (Python) 
 
 ## Funcionalidades e Padrões de Projetos 
-A descricão de cada funcionalidade e os Padrões de Projeto utilizados estão separados em cada servico que um membro da equipe implementou. Eles podem ser acessados pelos links na coluna "Serviço" da tabela abaixo: 
+A descrição de cada funcionalidade e os Padrões de Projeto utilizados estão separados em cada serviço que um membro da equipe implementou. Eles podem ser acessados pelos links na coluna "Serviço" da tabela abaixo:
 
 |Nome|Serviço|Linguagem|Descrição|Justificativa|
 |-|-|-|---------------------|-|
