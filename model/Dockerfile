@@ -5,6 +5,9 @@ FROM python:3.7
 WORKDIR /app
 
 RUN apt-get update
+RUN apt-get -y install build-essential libssl-dev libffi-dev libblas3 libc6 liblapack3 gcc python3-dev python3-pip cython3
+RUN apt-get -y install python3-numpy python3-scipy
+
 RUN apt install -y netcat
 #copy all the files
 COPY . .
@@ -14,7 +17,7 @@ COPY . .
 RUN pip install -r requirements.txt
 # RUN python3 -m pip install --no-cache-dir -r requirements.txt
 
-COPY wait-for-it.sh wait-for-it.sh 
+COPY wait-for-it.sh wait-for-it.sh
 
 RUN chmod +x wait-for-it.sh
 
