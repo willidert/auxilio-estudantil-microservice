@@ -44,7 +44,7 @@ A descrição de cada funcionalidade e os Padrões de Projeto utilizados estão 
 Clone o respositório para a sua máquina e execute o comando abaixo: 
 
 ```
-git clone https://github.com/willidert/auxilio-estudantil-microservice
+git clone https://github.com/willidert/auxilio-estudantil-microservice.git
 ```
 Entre no projeto clonado: 
 ```
@@ -54,3 +54,9 @@ Na raiz do projeto  digite:
 ```
 docker-compose up 
 ```
+
+Acessando o [localhost](http://localhost) será possível acessar a interface do formulário. O nginx está responsável por fazer a ponte e redirecionar as requisicões. O formulário segue para a api que salva os dados no mongodb e envia para a mensageria (rabbitMQ) na fila form. O serviço data-clean está inscrito nessa fila e sempre que chegar uma mensagem ele pode pegá-la para realizar a limpeza dos dados antes de enviar à fila model. O serviço model recebe a  mensagem, realiza a predição e atualiza os dados no mongodb. O serviço notify está escutando as alterações do serviço model no mongodb e sempre que ocorre uma atualização é disparado um email informando o status predito do aluno.
+
+É possível acompanhar as alterações no [mongodb](http://localhost:8081).
+
+E também pode-se observar as mensagens que passam pela [mensageria](http://localhost:15672).

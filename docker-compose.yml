@@ -84,19 +84,19 @@ services:
     networks:
       - app-network
 
-  # notifyer:
-  #   build: ./notifyer
-  #   container_name: notifyer
-  #   working_dir: /notifyer
-  #   restart: always
-  #   depends_on:
-  #     - mongodb
-  #   volumes:
-  #     - ./notifyer/:/notifyer
-  #   ports:
-  #     - 465:465
-  #   networks:
-  #     - app-network
+  notifyer:
+    build: ./notifyer
+    container_name: notifyer
+    working_dir: /notifyer
+    restart: always
+    depends_on:
+      - mongodb
+    volumes:
+      - ./notifyer/:/notifyer
+    ports:
+      - 465:465
+    networks:
+      - app-network
     
   mongo-express:
     image: mongo-express
