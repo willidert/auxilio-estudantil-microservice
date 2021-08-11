@@ -1,6 +1,4 @@
-"""Docstring for singleton"""
 class SingletonMeta(type):
-    """Docstring for Singleton"""
     _instances = {}
 
     def __call__(cls, *args, **kwargs):

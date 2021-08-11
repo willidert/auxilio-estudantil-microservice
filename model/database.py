@@ -4,12 +4,16 @@ from singleton import SingletonMeta
 
 CONNECTION_STRING = "mongodb://root:example@mongodb:27017/form-questions"
 
+
 class Database(metaclass=SingletonMeta):
     """Docstring for Database"""
-    def __init__(self)  -> None:
+
+    def __init__(self) -> None:
         self.con_str = CONNECTION_STRING
         try:
-            self.client = MongoClient(self.con_str, serverSelectionTimeoutMS=3000)
+            self.client = MongoClient(self.con_str,
+                                      serverSelectionTimeoutMS=3000
+                                      )
         except errors.ServerSelectionTimeoutError as err:
             print(err)
             self.client = None
@@ -21,7 +25,7 @@ class Database(metaclass=SingletonMeta):
     def update(self, email: str, res: int) -> None:
         """Docstring for update"""
         self.__get_database()['user-form-question'].update_one(
-          {'email' : email }, {'$inc': {'result': res}}
+            {'email': email}, {'$inc': {'result': res}}
         )
 
     def create(self, data) -> None:
