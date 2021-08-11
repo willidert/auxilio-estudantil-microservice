@@ -33,4 +33,4 @@ jobs:
         uses: liskin/gh-problem-matcher-wrap@v1
         with:
           linters: flake8
-          run: flake8 --ignore F821,E501, F401, E501
+          run: flake8 --ignore F821,E501,F401,E501
