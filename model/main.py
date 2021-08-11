@@ -1,5 +1,7 @@
+"""Docstring for main"""
 import json
-import pika, sys, os
+import sys
+import pika
 import numpy as np
 
 from model import Model
@@ -7,19 +9,15 @@ from database import Database
 
 
 def main():
-    # try:
-    # credentials = pika.PlainCredentials(username='admin', password='admin')
-    # connection = pika.BlockingConnection(pika.ConnectionParameters(host='rabbitmq', credentials=credentials))
+    """Docstring for main"""
     connection = pika.BlockingConnection(pika.URLParameters('amqp://admin:admin@rabbitmq:5672'))
-        # channel = connection.channel()
-    # except Exception as err:
-        # print(err)
     channel = connection.channel()
 
     channel.queue_declare(queue='model')
 
-    def callback(ch, method, properties, body):
-        db = Database()
+    def callback(body):
+        """Saco"""
+        db = Database() # pylint: disable=invalid-name
         model = Model()
         print(" [x] Received %r" % body)
         data = json.loads(body)
@@ -40,7 +38,4 @@ if __name__ == '__main__':
         print("hue")
     except KeyboardInterrupt:
         print('Interrupted')
-        try:
-            sys.exit(0)
-        except SystemExit:
-            os._exit(0)
+        sys.exit(0)
